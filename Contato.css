@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f4f1;
+  color: #333;
+}
+
+/* Cabeçalho */
+.faixa-vermelha {
+  background-color: #662B2B;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.esquerda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.nome-pizzaria {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 28px;
+  margin: 0;
+  color: white;
+}
+
+.meio {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.meio a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.meio a:hover,
+.meio a.active {
+  color: #006400;
+}
+
+.direita {
+  display: flex;
+  align-items: center;
+}
+
+.order-btn {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.order-btn-vermelho {
+  background-color: #006400;
+  color: white;
+}
+
+.order-btn-vermelho:hover {
+  background-color: #004d00;
+}
+
+/* Conteúdo principal */
+.conteudo {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.quadro-branco {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.contato h1 {
+  font-size: 32px;
+  color: #662B2B;
+  font-family: 'Sansita Swashed', cursive;
+  margin-bottom: 20px;
+}
+
+.contato h2 {
+  font-size: 24px;
+  color: #006400;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.lista-contato {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.lista-contato li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.lista-contato a {
+  color: #006400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lista-contato a:hover {
+  color: #004d00;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .faixa-vermelha {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .meio {
+    justify-content: center;
+  }
+
+  .conteudo {
+    padding: 30px 10px;
+  }
+
+  .quadro-branco {
+    padding: 25px;
+  }
+}
+.slogan {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 20px;
+  color: white;
+  margin-top: 5px;
+}

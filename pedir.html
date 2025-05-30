@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="pedir.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet" />
+  <title>La Tradizione</title>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <div class="faixa-vermelha">
+    <div class="esquerda">
+      <img src="Logos/LogoBege.png" alt="Logo" class="logo" />
+      <div class="nome-pizzaria"><i>La Tradizione</i></div>
+    </div>
+
+    <nav class="meio">
+      <a href="inicial.html">Home</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="direita">
+      <button id="btn-voltar" class="btn-voltar">Voltar</button>
+    </div>
+  </div>
+
+  <main class="pedido-container">
+
+  <h1>Faça seu Pedido</h1>
+  <!-- Itens temporários - Futuramente o sistema de cadastro integrará o cardápio e pedidos. -->
+
+  <!-- Pedir Pizza -->
+
+  <section class="form-pedido-unificado pizza">
+  <label for="select-pizza">Escolha sua pizza:</label>
+  <select id="select-pizza-pizza" class="select-produto">
+    <option value="" disabled selected>Selecione um sabor</option>
+    <option value="Margherita">Margherita - R$35,90</option>
+    <option value="Calabresa">Calabresa - R$37,90</option>
+    <option value="Mussarela">Mussarela - R$34,90</option>
+    <option value="Portuguesa">Portuguesa - R$39,90</option>
+  </select>
+
+  <div class="controle-quantidade">
+    <button class="btn-quantidade" data-op="menos">-</button>
+    <input type="text" class="quantidade" value="1" readonly />
+    <button class="btn-quantidade" data-op="mais">+</button>
+  </div>
+
+  <textarea class="obs-produto" placeholder="Observações para esta pizza..."></textarea>
+
+  <button class="btn-adicionar-carrinho">Adicionar ao carrinho</button>
+</section>
+
+<section class="form-pedido-unificado bebida">
+  <label for="select-bebida">Escolha seus Adicionais:</label>
+  <select id="select-bebida" class="select-produto">
+    <option value="" disabled selected>Selecione um produto</option>
+    <option value="Refrigerante">Refrigerante - R$11,90</option>
+    <option value="Suco">Suco - R$9,90</option>
+    <option value="Alcool">Bebida Alcolica - R$14,90</option>
+    <option value="Agua">Água - R$4,90</option>
+  </select>
+
+  <div class="controle-quantidade">
+    <button class="btn-quantidade" data-op="menos">-</button>
+    <input type="text" class="quantidade" value="1" readonly />
+    <button class="btn-quantidade" data-op="mais">+</button>
+  </div>
+
+  <textarea class="obs-produto" placeholder="Observações para este produto..."></textarea>
+
+  <button class="btn-adicionar-carrinho">Adicionar ao carrinho</button>
+</section>
+
+<section class="form-pedido-unificado Promoções">
+
+    <label for="select-combo">Escolha seu Combo:</label>
+    <select id="select-combo" class="select-produto">
+      <option value="" disabled selected>Selecione um combo</option>
+      <option value="Combo Margherita">Margherita - R$49,90</option>
+      <option value="Combo Calabresa">Calabresa - R$59,90</option>
+      <option value="Combo Vegetariana">vegetariana - R$54,90</option>
+      <option value="Combo Monza">Nacional de Monza - R$44,90</option>
+    </select>
+
+    <div class="controle-quantidade">
+      <button class="btn-quantidade" data-op="menos">-</button>
+      <input type="text" class="quantidade" value="1" readonly />
+      <button class="btn-quantidade" data-op="mais">+</button>
+    </div>
+    <textarea class="obs-produto" placeholder="Observações para este combo..."></textarea>
+    <button class="btn-adicionar-carrinho">Adicionar ao carrinho</button>
+
+    <!-- Carrinho -->
+
+  <section class="carrinho-pedido">
+    <h2>Carrinho</h2>
+    <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+    <ul class="lista-carrinho"></ul>
+  </section>
+
+    <section class="total-pedido">
+        <h2>Total do Pedido</h2>
+        <p class="valor-total">Total: R$ 0,00</p>
+        <button class="btn-finalizar-pedido">Finalizar Pedido</button>
+    </section>
+  </section>
+
+
+    <div class="modal-confirmacao hidden">
+        <div class="modal-conteudo">
+        <h2>Pedido Confirmado!</h2>
+        <p>Seu pedido foi realizado com sucesso.</p>
+        <button class="btn-fechar-modal" onclick="window.location.href='inicial.html'">Fechar</button>
+        </div>
+
+</main>
+
+  <script src="Pizzaria.js"></script>
+</body>
+</html>
