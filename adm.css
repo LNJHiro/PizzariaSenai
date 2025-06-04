@@ -1,172 +1,419 @@
-/* Importar fonte decorativa */
-@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Sansita Swashed', 'Arial', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f8f5f0;
   color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 50m-40 0a40 40 0 1 0 80 0a40 40 0 1 0 -80 0" fill="%23662B2B" fill-opacity="0.02"/></svg>');
+  background-size: 300x 300px;
 }
 
-/* Faixa superior */
+/* Cabeçalho */
 .faixa-vermelha {
   background-color: #662B2B;
-  color: white;
+  color: #fff;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-.faixa-vermelha .esquerda {
+.esquerda {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 60px;
+  height: 70px;
   margin-right: 15px;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .nome-pizzaria {
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 32px;
-  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }
 
-/* Botão de sair */
+/* Botões */
 .btn-sair {
-  background-color: #cc0000;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-sair:hover {
-  background-color: #a00000;
+  background-color: #fff;
+  color: #662B2B;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Container principal */
 .container {
-  padding: 30px;
-  max-width: 1000px;
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
-/* Título */
 .container h1 {
-  font-size: 28px;
-  color: #662B2B;
-  margin-bottom: 20px;
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 30px;
   text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* Menu de botões */
+.container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #006400;
+  border-radius: 2px;
+}
+
+/* Menu de navegação admin */
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .menu button {
-  padding: 10px 15px;
   background-color: #006400;
-  color: white;
+  color: #fff;
   border: none;
+  padding: 14px 22px;
   border-radius: 6px;
+  font-size: 15px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .menu button:hover {
-  background-color: #228B22;
+  background-color: #007500;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu button:nth-child(odd) {
+  background-color: #662B2B;
+}
+
+.menu button:nth-child(odd):hover {
+  background-color: #7a3232;
 }
 
 .icon {
-  margin-right: 8px;
+  font-size: 18px;
 }
 
-/* Seções ocultáveis */
+/* Seções de conteúdo */
+#adicionar, #consultar, #alterar, #venda, #relatorio-vendas {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  margin-bottom: 30px;
+  animation: fadeIn 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+#adicionar:hover, #consultar:hover, #alterar:hover, #venda:hover, #relatorio-vendas:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
 .hidden {
   display: none;
 }
 
+/* Títulos de seção */
+#adicionar h2, #consultar h2, #alterar h2, #venda h2, #relatorio-vendas h3 {
+  color: #444;
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+#adicionar h2::after, #consultar h2::after, #alterar h2::after, #venda h2::after, #relatorio-vendas h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: #006400;
+  border-radius: 2px;
+}
+
 /* Formulários */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
 .form-group label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
 }
 
-/* Botão dos formulários */
-button {
-  background-color: #662B2B;
-  color: white;
+.form-group input:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Botões de ação */
+#adicionar button, #alterar button, #venda button {
+  background-color: #006400;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 5px;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 15px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 25px auto 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  background-color: #8b3d3d;
+#adicionar button:hover, #alterar button:hover, #venda button:hover {
+  background-color: #007500;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Tabela */
+/* Campo de busca */
+#busca, #busca-alterar {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#busca:focus, #busca-alterar:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Tabelas */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 14px;
 }
 
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 10px;
+thead {
+  background-color: #444;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
   text-align: left;
+  border-bottom: 1px solid #eee;
 }
 
-table thead {
-  background-color: #662B2B;
-  color: white;
+th {
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-#busca,
-#busca-alterar {
-  padding: 8px;
-  width: 100%;
-  margin-bottom: 10px;
+tbody tr {
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
 /* Lista de vendas */
 #lista-vendas {
-  margin-top: 10px;
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#lista-vendas li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+#lista-vendas li:hover {
+  background-color: #f5f5f5;
+}
+
+#lista-vendas li:last-child {
+  border-bottom: none;
+}
+
+/* Relatório de vendas */
+#relatorio-vendas {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#relatorio-vendas h3 {
+  color: #444;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#tabela-relatorio-vendas {
+  width: 100%;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .faixa-vermelha {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .container h1 {
+    font-size: 28px;
+  }
+  
+  .menu {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+  }
+  
+  .menu button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #adicionar, #consultar, #alterar, #venda, #relatorio-vendas {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container h1 {
+    font-size: 24px;
+  }
+  
+  #adicionar h2, #consultar h2, #alterar h2, #venda h2, #relatorio-vendas h3 {
+    font-size: 20px;
+  }
+  
+  .form-group input, #busca, #busca-alterar {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 10px;
+    font-size: 13px;
+  }
 }

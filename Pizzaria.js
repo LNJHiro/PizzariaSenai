@@ -1,6 +1,4 @@
-// scr do contato
-
-// === LOGIN ===
+// LOGIN
 function exibirMensagem(texto, tipo) {
   const mensagem = document.getElementById("mensagem");
   mensagem.textContent = texto;
@@ -17,14 +15,15 @@ const usuarios = [
   { email: "admin@pizza.com", senha: "pizza1234", tipo: "admin" }
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.getElementById("btn-entrar")) {
-    document.getElementById("btn-entrar").addEventListener("click", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const btnEntrar = document.getElementById("btn-entrar");
+  if (btnEntrar) {
+    btnEntrar.addEventListener("click", () => {
       const email = document.getElementById("email").value;
       const senha = document.getElementById("senha").value;
-
-      const usuarioValido = usuarios.find(user => user.email === email && user.senha === senha);
-
+      const usuarioValido = usuarios.find(
+        user => user.email === email && user.senha === senha
+      );
       if (usuarioValido) {
         exibirMensagem("Login realizado com sucesso!", "sucesso");
         setTimeout(() => {
@@ -35,22 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    document.getElementById("esqueci-senha").addEventListener("click", function (e) {
+    document.getElementById("esqueci-senha").addEventListener("click", e => {
       e.preventDefault();
       alert("Função de recuperação de senha ainda não implementada!");
     });
 
-    document.getElementById("criar-conta").addEventListener("click", function (e) {
+    document.getElementById("criar-conta").addEventListener("click", e => {
       e.preventDefault();
       alert("Redirecionamento para página de cadastro em breve!");
     });
   }
 });
 
-// === INICIAL ===
-
-//Botão de Sair
-document.addEventListener("DOMContentLoaded", function () {
+// Botão de Sair
+document.addEventListener("DOMContentLoaded", () => {
   const btnSair = document.getElementById("btn-sair");
   if (btnSair) {
     btnSair.addEventListener("click", () => {
@@ -59,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//Botão de Voltar
-document.addEventListener("DOMContentLoaded", function () {
+// Botão de Voltar
+document.addEventListener("DOMContentLoaded", () => {
   const btnVoltar = document.getElementById("btn-voltar");
   if (btnVoltar) {
     btnVoltar.addEventListener("click", () => {
@@ -69,12 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// === ADMINISTRAÇÃO ===
+// ADM
 let pizzaria = [];
 
 function mostrarSecao(secao) {
   const secoes = ['adicionar', 'consultar', 'alterar', 'venda', 'relatorio-vendas'];
-  secoes.forEach(id => document.getElementById(id).classList.add("hidden"));
+  secoes.forEach(id => {
+    document.getElementById(id).classList.add("hidden");
+  });
   document.getElementById(secao).classList.remove("hidden");
 }
 
@@ -97,7 +96,7 @@ function adicionarPizza() {
 
 function buscarPizza() {
   const busca = document.getElementById("busca").value.toLowerCase();
-  const resultados = pizzaria.filter((pizza) =>
+  const resultados = pizzaria.filter(pizza =>
     pizza.nome.toLowerCase().includes(busca)
   );
   atualizarLista(resultados);
@@ -114,7 +113,7 @@ function buscarPizzaParaAlterar() {
     return;
   }
 
-  pizzaParaAlterar = pizzaria.find((pizza) =>
+  pizzaParaAlterar = pizzaria.find(pizza =>
     pizza.nome.toLowerCase().includes(busca)
   );
 
@@ -158,7 +157,7 @@ function atualizarLista(lista = pizzaria) {
   const tabela = document.getElementById("lista-pizzas");
   tabela.innerHTML = "";
 
-  lista.forEach((pizza) => {
+  lista.forEach(pizza => {
     const linha = document.createElement("tr");
     linha.innerHTML = `
       <td>${pizza.nome}</td>
@@ -169,7 +168,7 @@ function atualizarLista(lista = pizzaria) {
   });
 }
 
-// Registro de Vendas
+// Registro das Vendas
 let vendas = [];
 
 function registrarVenda() {
@@ -204,7 +203,7 @@ function gerarRelatorioVendas() {
 
   let totalVendas = 0;
 
-  vendas.forEach((venda) => {
+  vendas.forEach(venda => {
     const linha = document.createElement("tr");
     linha.innerHTML = `
       <td>${venda.nomePizza}</td>
@@ -230,15 +229,11 @@ function voltarLogin() {
   window.location.href = "login.html";
 }
 
-// === CARDÁPIO ===
-// (em breve)
-
-// === PEDIDOS ===
+// PEDIDOS
 document.addEventListener('DOMContentLoaded', () => {
   const listaCarrinho = document.querySelector('.lista-carrinho');
   const carrinhoVazio = document.querySelector('.carrinho-vazio');
 
-  // Seleciona todos os formulários (pizza, bebida, etc)
   document.querySelectorAll('.form-pedido-unificado').forEach(form => {
     const btnMais = form.querySelector('.btn-quantidade[data-op="mais"]');
     const btnMenos = form.querySelector('.btn-quantidade[data-op="menos"]');
@@ -268,7 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Criar item do carrinho
       const li = document.createElement('li');
       li.innerHTML = `
         <strong>${textoSelecionado}</strong> x ${quantidade}
@@ -277,16 +271,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       listaCarrinho.appendChild(li);
 
-      // Limpar formulário após adicionar
       selectProduto.selectedIndex = 0;
       inputQuantidade.value = 1;
       textareaObs.value = '';
 
-      // Mostrar lista e esconder texto "carrinho vazio"
       carrinhoVazio.style.display = 'none';
     });
   });
 });
-
-// === SOBRE ===
-// (em breve)
