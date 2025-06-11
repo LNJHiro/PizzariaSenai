@@ -9,7 +9,7 @@ La Tradizione - Sistema de Pizzaria
 
 📋 Sobre o Projeto
 
-La Tradizione é um sistema web completo para uma pizzaria italiana tradicional, desenvolvido para proporcionar uma experiência sofisticada tanto para clientes quanto para administradores. O sistema permite visualizar o cardápio, fazer pedidos online, conhecer a história da pizzaria, entrar em contato e gerenciar o estabelecimento através de um painel administrativo.
+La Tradizione é um sistema web completo para uma pizzaria italiana tradicional, desenvolvido para por em prática o que eu aprendi durante esse semestre do curso de DEV do Senai de Limeira. O sistema permite visualizar o cardápio, fazer pedidos online, conhecer a história da pizzaria, entrar em contato e gerenciar o estabelecimento através de um painel administrativo.
 
 🍕 Funcionalidades
 
