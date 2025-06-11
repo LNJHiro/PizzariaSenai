@@ -12,7 +12,7 @@ function exibirMensagem(texto, tipo) {
 
 const usuarios = [
   { email: "teste@email.com", senha: "1234", tipo: "cliente" },
-  { email: "admin@pizza.com", senha: "pizza1234", tipo: "admin" }
+  { email: "adm@latradizione.com", senha: "1234", tipo: "admin" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
