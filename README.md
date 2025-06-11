@@ -105,16 +105,16 @@ Acesso ao Sistema
 
 •   Área do Cliente: Acesse diretamente pelo inicial.html ou usando as credenciais no login.html:
 
-<strong>•   Email: teste@email.com<strong> 
+**•   Email: teste@email.com** 
 
-<strong>•   Senha: "1234<strong>
+**•   Senha: "1234**
 
 
 •   Área Administrativa: Acesse pelo login.html usando as credenciais:
 
-<strong>•   Email: adm@latradizione.com<strong>
+**•   Email: adm@latradizione.com**
 
-<strong>•   Senha: 1234<strong>
+**•   Senha: 1234**
 
 
 
