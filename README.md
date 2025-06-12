@@ -107,7 +107,7 @@ Acesso ao Sistema
 
 **•   Email: teste@email.com** 
 
-**•   Senha: "1234**
+**•   Senha: 1234**
 
 
 •   Área Administrativa: Acesse pelo login.html usando as credenciais:
